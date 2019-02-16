@@ -23,7 +23,7 @@ RUN if [ -n "${LOCAL_REPO}" ] ; then \
      curl -s -o /etc/yum.repos.d/local.repo ${LOCAL_REPO} ; \
     fi
 
-RUN INSTALLED_PKGS="kibana-${KIBANA_VER}*" && \
+RUN INSTALLED_PKGS="kibana-${KIBANA_VER}" && \
     yum install -y --setopt=tsflags=nodocs  ${INSTALLED_PKGS} zip && \
     yum clean all
 
